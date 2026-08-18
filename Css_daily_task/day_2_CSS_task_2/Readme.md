@@ -12,7 +12,7 @@ The main purpose of this task is to practice and understand **CSS styling, layou
 
 * HTML5
 * CSS3
-
+ 
 ---
 
 ## 📂 Project Structure
