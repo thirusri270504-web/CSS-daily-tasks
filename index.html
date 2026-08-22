@@ -3,8 +3,7 @@
 <html lang="en">
 
 <head>
-
-```
+    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,7 +11,9 @@
 
 <style>
 
-    /* ================= RESET ================= */
+    /* =================================================
+       RESET
+    ================================================= */
 
     * {
         margin: 0;
@@ -21,258 +22,513 @@
     }
 
 
-    /* ================= BODY ================= */
+    /* =================================================
+       BODY
+    ================================================= */
 
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f7fb;
-        color: #1e293b;
+        font-family: Arial, Helvetica, sans-serif;
+
+        background:
+            linear-gradient(
+                135deg,
+                #f8f5ff,
+                #eefcff
+            );
+
+        color: #20203a;
+
+        min-height: 100vh;
     }
 
 
-    /* ================= HEADER ================= */
+    /* =================================================
+       HEADER
+    ================================================= */
 
     nav {
-        background: linear-gradient(135deg, #0f172a, #2563eb);
-        padding: 22px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #24104f,
+                #552583,
+                #008b8b
+            );
+
+        padding: 24px 20px;
+
         text-align: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+        box-shadow:
+            0 8px 25px rgba(36, 16, 79, 0.25);
+
         position: sticky;
+
         top: 0;
+
         z-index: 100;
     }
 
+
     nav h2 {
-        color: white;
-        font-size: 25px;
+
+        color: #ffffff;
+
+        font-size: 26px;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+    }
+
+
+    /* =================================================
+       MAIN CONTAINER
+    ================================================= */
+
+    .container {
+
+        width: 90%;
+
+        max-width: 1100px;
+
+        margin: 70px auto;
+
+        min-height: 70vh;
+    }
+
+
+    /* =================================================
+       HEADING
+    ================================================= */
+
+    .heading {
+
+        text-align: center;
+
+        margin-bottom: 55px;
+    }
+
+
+    .heading h1 {
+
+        font-size: 44px;
+
+        font-weight: 800;
+
+        color: #24104f;
+
+        margin-bottom: 14px;
+
         letter-spacing: 1px;
     }
 
 
-    /* ================= MAIN ================= */
+    .heading h1 span {
 
-    .container {
-        width: 90%;
-        max-width: 1050px;
-        margin: 60px auto;
-        min-height: 75vh;
+        color: #008b8b;
     }
 
-
-    /* ================= HEADING ================= */
-
-    .heading {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .heading h1 {
-        font-size: 38px;
-        color: #0f172a;
-        margin-bottom: 12px;
-    }
 
     .heading p {
-        color: #64748b;
+
+        color: #68687d;
+
         font-size: 17px;
+
+        letter-spacing: 0.5px;
     }
 
 
-    /* ================= TASK GRID ================= */
+    /* =================================================
+       TASK GRID
+    ================================================= */
 
     .tasks {
+
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 30px;
-        align-items: stretch;
+
+        grid-template-columns:
+            repeat(6, 1fr);
+
+        gap: 28px;
     }
 
 
-    /* ================= TASK CARD ================= */
+    /* =================================================
+       TASK CARD
+    ================================================= */
 
     .task {
-        background-color: white;
-        padding: 32px 25px;
-        border-radius: 15px;
+
+        background: rgba(255, 255, 255, 0.9);
+
+        padding: 34px 25px;
+
+        border-radius: 20px;
+
         text-align: center;
-        border: 1px solid #e2e8f0;
+
+        border: 1px solid #e5ddf5;
 
         box-shadow:
-            0 6px 18px rgba(15, 23, 42, 0.08);
+            0 10px 30px rgba(55, 35, 100, 0.10);
 
-        transition: all 0.3s ease;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
+
+        position: relative;
+
+        overflow: hidden;
     }
 
 
-    /* ================= CARD HOVER ================= */
+    /* TOP COLOR LINE */
+
+    .task::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 5px;
+
+        background:
+            linear-gradient(
+                90deg,
+                #ff6b6b,
+                #f7b731,
+                #008b8b
+            );
+    }
+
+
+    /* CARD HOVER */
 
     .task:hover {
-        transform: translateY(-8px);
-        border-color: #93c5fd;
+
+        transform:
+            translateY(-10px);
+
+        border-color: #bca8e8;
 
         box-shadow:
-            0 12px 25px rgba(37, 99, 235, 0.18);
+            0 18px 40px
+            rgba(55, 35, 100, 0.18);
     }
 
 
-    /* ================= DAY TITLE ================= */
+    /* =================================================
+       DAY TITLE
+    ================================================= */
 
     .task h3 {
+
         display: inline-block;
-        color: #2563eb;
-        background-color: #eff6ff;
-        padding: 7px 15px;
-        border-radius: 20px;
+
+        color: #552583;
+
+        background:
+            #f1eaff;
+
+        padding: 8px 18px;
+
+        border-radius: 30px;
+
         font-size: 18px;
-        margin-bottom: 15px;
+
+        margin-bottom: 18px;
+
+        font-weight: 700;
     }
 
 
-    /* ================= DESCRIPTION ================= */
+    /* =================================================
+       DESCRIPTION
+    ================================================= */
 
     .task p {
-        color: #64748b;
-        margin-bottom: 22px;
+
+        color: #68687d;
+
+        margin-bottom: 25px;
+
         font-size: 15px;
+
+        line-height: 1.6;
     }
 
 
-    /* ================= BUTTON ================= */
+    /* =================================================
+       VIEW TASK BUTTON
+    ================================================= */
 
     .task a {
+
         display: inline-block;
+
         text-decoration: none;
 
-        background: linear-gradient(
-            135deg,
-            #2563eb,
-            #4f46e5
-        );
-
         color: white;
-        padding: 11px 20px;
-        border-radius: 7px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #552583,
+                #008b8b
+            );
+
+        padding:
+            12px 23px;
+
+        border-radius: 10px;
+
         font-size: 14px;
+
         font-weight: bold;
 
-        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            background 0.3s ease;
 
         box-shadow:
-            0 5px 12px rgba(37, 99, 235, 0.2);
+            0 7px 18px
+            rgba(85, 37, 131, 0.25);
     }
 
+
+    /* BUTTON HOVER */
 
     .task a:hover {
-        background: linear-gradient(
-            135deg,
-            #0f172a,
-            #2563eb
-        );
 
-        transform: scale(1.05);
+        transform:
+            translateY(-3px);
+
+        background:
+            linear-gradient(
+                135deg,
+                #ff6b6b,
+                #f7b731
+            );
 
         box-shadow:
-            0 8px 18px rgba(37, 99, 235, 0.3);
+            0 10px 22px
+            rgba(255, 107, 107, 0.30);
     }
 
 
-    /* ================= DESKTOP LAYOUT ================= */
+    /* =================================================
+       DESKTOP LAYOUT
+       3 CARDS FIRST ROW
+       2 CARDS SECOND ROW
+    ================================================= */
 
     .task:nth-child(1),
     .task:nth-child(2),
     .task:nth-child(3) {
-        grid-column: span 2;
+
+        grid-column:
+            span 2;
     }
+
 
     .task:nth-child(4) {
-        grid-column: 2 / span 2;
+
+        grid-column:
+            2 / span 2;
     }
+
 
     .task:nth-child(5) {
-        grid-column: 4 / span 2;
+
+        grid-column:
+            4 / span 2;
     }
 
-    .task:nth-child(6) {
-        grid-column: 3 / span 2;
-    }
 
-
-    /* ================= FOOTER ================= */
+    /* =================================================
+       FOOTER
+    ================================================= */
 
     footer {
-        background-color: #0f172a;
+
+        background:
+            linear-gradient(
+                135deg,
+                #24104f,
+                #552583
+            );
+
         color: white;
+
         text-align: center;
-        padding: 28px;
-        margin-top: 70px;
+
+        padding: 30px 20px;
+
+        margin-top: 80px;
     }
+
 
     footer p {
-        margin: 6px;
+
+        margin: 7px;
+
+        font-size: 14px;
+
+        color: #ddd5ee;
     }
+
 
     footer strong {
-        color: #60a5fa;
+
+        color: #45d6d6;
     }
 
 
-    /* ================= TABLET ================= */
+    /* =================================================
+       TABLET
+    ================================================= */
 
     @media (max-width: 800px) {
 
         .container {
-            width: 90%;
-            margin: 45px auto;
+
+            width: 88%;
+
+            margin:
+                50px auto;
         }
+
 
         .heading h1 {
-            font-size: 32px;
+
+            font-size: 36px;
         }
+
 
         .tasks {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 24px;
         }
 
+
         .task:nth-child(n) {
-            grid-column: auto;
+
+            grid-column:
+                auto;
         }
 
     }
 
 
-    /* ================= MOBILE ================= */
+    /* =================================================
+       MOBILE
+    ================================================= */
 
     @media (max-width: 550px) {
 
-        .heading h1 {
-            font-size: 28px;
+        nav {
+
+            padding:
+                20px 15px;
         }
+
+
+        nav h2 {
+
+            font-size: 21px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .container {
+
+            width: 88%;
+
+            margin:
+                40px auto;
+        }
+
+
+        .heading {
+
+            margin-bottom:
+                35px;
+        }
+
+
+        .heading h1 {
+
+            font-size: 30px;
+
+            line-height: 1.3;
+        }
+
 
         .heading p {
+
             font-size: 15px;
+
+            line-height: 1.6;
         }
+
 
         .tasks {
-            grid-template-columns: 1fr;
-            gap: 25px;
+
+            grid-template-columns:
+                1fr;
+
+            gap: 22px;
         }
 
+
         .task:nth-child(n) {
-            grid-column: auto;
+
+            grid-column:
+                auto;
+        }
+
+
+        .task {
+
+            padding:
+                30px 22px;
+        }
+
+
+        footer {
+
+            margin-top:
+                50px;
         }
 
     }
 
 </style>
-```
 
 </head>
 
 <body>
 
-```
-<!-- ================= HEADER ================= -->
+<!-- =================================================
+     HEADER
+================================================= -->
 
 <nav>
 
@@ -283,32 +539,40 @@
 </nav>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =================================================
+     MAIN
+================================================= -->
 
-<div class="container">
+<main class="container">
 
 
-    <!-- ================= HEADING ================= -->
+    <!-- =================================================
+         HEADING
+    ================================================= -->
 
-    <div class="heading">
+    <section class="heading">
 
         <h1>
-            CSS Daily Tasks
+            CSS <span>Daily Tasks</span>
         </h1>
 
         <p>
-            My CSS practice projects
+            My CSS practice projects and learning journey
         </p>
 
-    </div>
+    </section>
 
 
-    <!-- ================= TASK CARDS ================= -->
+    <!-- =================================================
+         TASK CARDS
+    ================================================= -->
 
-    <div class="tasks">
+    <section class="tasks">
 
 
-        <!-- ================= DAY 01 ================= -->
+        <!-- =================================================
+             DAY 01
+        ================================================= -->
 
         <div class="task">
 
@@ -331,7 +595,9 @@
         </div>
 
 
-        <!-- ================= DAY 02 ================= -->
+        <!-- =================================================
+             DAY 02
+        ================================================= -->
 
         <div class="task">
 
@@ -354,7 +620,9 @@
         </div>
 
 
-        <!-- ================= DAY 03 ================= -->
+        <!-- =================================================
+             DAY 03
+        ================================================= -->
 
         <div class="task">
 
@@ -377,7 +645,9 @@
         </div>
 
 
-        <!-- ================= DAY 04 ================= -->
+        <!-- =================================================
+             DAY 04
+        ================================================= -->
 
         <div class="task">
 
@@ -400,7 +670,9 @@
         </div>
 
 
-        <!-- ================= DAY 05 ================= -->
+        <!-- =================================================
+             DAY 05
+        ================================================= -->
 
         <div class="task">
 
@@ -422,12 +694,15 @@
 
         </div>
 
-    </div>
 
-</div>
+    </section>
+
+</main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =================================================
+     FOOTER
+================================================= -->
 
 <footer>
 
@@ -436,11 +711,11 @@
     </p>
 
     <p>
-        Created by <strong>Thirusri</strong>
+        Created by
+        <strong>Thirusri</strong>
     </p>
 
 </footer>
-```
 
 </body>
 
